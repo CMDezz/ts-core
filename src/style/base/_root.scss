@@ -1,0 +1,39 @@
+:root{
+    //body
+    --dse-body-text-color: #{$dark};
+    --dse-body-background-color: #{$white};
+    --dse-body-font-size: #{$fs-sm};
+    --dse-body-font-weight: #{$fw-normal};
+
+
+    //button
+    --dse-btn-primary-color: #{$white};
+    --dse-btn-primary-background: #{$green};
+    --dse-btn-primary-background-hover: #{$green-light};
+
+    //form
+    --dse-form-color: #{$dark};
+    --dse-form-disabled-color: #{$dark-light};
+    --dse-form-input-background: #{$white};
+    --dse-form-disabled-background: #{$white-dark};
+    --dse-form-error-color: #{$red-light};
+    --dse-form-error-border-color: #{$red};
+    --dse-form-border-color: #{$gray};
+    --dse-form-border-hover-color: #{$green-light};
+
+    //heading
+    --dse-h1-font-weight: #{$fw-black};
+    --dse-h2-font-weight: #{$fw-extrabold};
+    --dse-h3-font-weight: #{$fw-bold};
+    --dse-h4-font-weight: #{$fw-semibold};
+    --dse-h5-font-weight: #{$fw-normal};
+    --dse-h6-font-weight: #{$fw-light};
+    --dse-h1-font-size: #{$h-1};
+    --dse-h2-font-size: #{$h-2};
+    --dse-h3-font-size: #{$h-3};
+    --dse-h4-font-size: #{$h-4};
+    --dse-h5-font-size: #{$h-5};
+    --dse-h6-font-size: #{$h-6};
+
+
+}

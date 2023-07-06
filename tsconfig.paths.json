@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "./src/*"
+            ],
+            // "@static/*": ["./static/*"],
+            // "@src/*": ["./src/*"],
+            // "@components/*": ["./src/components/*"],
+            // "@screens/*": ["./src/screens/*"],
+            // "@screens": ["./src/screens/index.jsx"],
+            // "@state/*": ["./src/state/*"],
+            // "@api/*": ["./src/api/*"],
+            // "@control": ["./src/control/index"],
+            // "@control/*": ["./src/control/*"],
+            // "@common/*": ["./src/common/*"],
+            // "@auth/*": ["./src/auth/*"],
+        }
+    }
+}
