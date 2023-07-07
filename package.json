@@ -33,7 +33,19 @@
     "test": "webpack  --progress ",
     "build": "webpack --progress ",
     "stylelint": "stylelint ./**/*.scss",
-    "stylelint:fix": "stylelint --fix ./**/*.scss"
+    "stylelint:fix": "stylelint --fix ./**/*.scss",
+    "eslint": "eslint ./**/*.{ts,tsx,js,jsx}",
+    "eslint:fix": "eslint --fix ./**/*.{ts,tsx,js,jsx}",
+    "lint-staged": "lint-staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.scss": "stylelint --fix",
+    "*.{ts,tsx}": "eslint --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -62,6 +74,8 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "html-webpack-plugin": "^5.5.3",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
     "stylelint-config-prettier": "^9.0.5",
     "stylelint-config-sass-guidelines": "^10.0.0",
     "stylelint-config-standard-scss": "^10.0.0",
