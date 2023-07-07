@@ -9,7 +9,13 @@ module.exports = {
     },
   },
   module: {
-    rules: [{ test: /\.tsx?$/, use: "ts-loader", exclude: /node_modules/ }],
+    rules: [
+      { test: /\.tsx?$/, use: "ts-loader", exclude: /node_modules/ },
+      {
+        test: /\.(scss|css|less)$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+    ],
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
