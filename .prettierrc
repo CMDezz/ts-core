@@ -10,6 +10,19 @@
   "requirePragma": false,
   "insertPragma": false,
   "singleQuote": false,
-  "parser": "typescript",
-  "endOfLine":"auto"
+  "overrides": [
+    {
+      "files": ["*.tsx", "*.ts"],
+      "options": {
+        "parser": "typescript"
+      }
+    },
+    {
+      "files": ["*.json", "*.jsonc"],
+      "options": {
+        "parser": "json"
+      }
+    }
+  ],
+  "endOfLine": "auto" 
 }

@@ -9,159 +9,148 @@
  *
  */
 
-
-
-
 /*=============================================
  =            Mixin Spacing            =
  =============================================*/
 
-
 /* margin */
 
-@mixin margin($valueTop, $valueRight:null, $valueBottom:null, $valueLeft:null) {
+@mixin margin(
+  $value-top,
+  $value-right: null,
+  $value-bottom: null,
+  $value-left: null
+) {
+  // margin('xxl') 4 directions
+  @if $value-right==null and $value-bottom==null and $value-left==null {
+    $value-right: $value-top;
+    $value-bottom: $value-top;
+    $value-left: $value-top;
+  }
 
-    // margin('xxl') 4 directions
-    @if $valueRight==null and $valueBottom==null and $valueLeft==null {
-        $valueRight: $valueTop;
-        $valueBottom: $valueTop;
-        $valueLeft: $valueTop;
-    }
-
-    margin-left: map-get($spacing, $valueLeft);
-    margin-right: map-get($spacing, $valueRight);
-    margin-top: map-get($spacing, $valueTop);
-    margin-bottom: map-get($spacing, $valueBottom);
+  margin-left: map.get($spacing, $value-left);
+  margin-right: map.get($spacing, $value-right);
+  margin-top: map.get($spacing, $value-top);
+  margin-bottom: map.get($spacing, $value-bottom);
 }
 
-@mixin margin-x($valueLeft, $valueRight:null) {
-    @if $valueRight==null {
-        $valueRight: $valueLeft;
-    }
+@mixin margin-x($value-left, $value-right: null) {
+  @if $value-right==null {
+    $value-right: $value-left;
+  }
 
-    margin-left: map-get($spacing, $valueLeft);
-    margin-right: map-get($spacing, $valueRight);
+  margin-left: map.get($spacing, $value-left);
+  margin-right: map.get($spacing, $value-right);
 }
 
-@mixin margin-y($valueTop, $valueBottom:null) {
-    @if $valueBottom==null {
-        $valueBottom: $valueTop;
-    }
+@mixin margin-y($value-top, $value-bottom: null) {
+  @if $value-bottom==null {
+    $value-bottom: $value-top;
+  }
 
-    margin-top: map-get($spacing, $valueTop);
-    margin-bottom: map-get($spacing, $valueBottom);
+  margin-top: map.get($spacing, $value-top);
+  margin-bottom: map.get($spacing, $value-bottom);
 }
-
 
 @mixin margin-top($value) {
-    margin-top: map-get($spacing, $value)
+  margin-top: map.get($spacing, $value);
 }
 
 @mixin margin-bottom($value) {
-    margin-top: map-get($spacing, $value)
+  margin-top: map.get($spacing, $value);
 }
 
 @mixin margin-left($value) {
-    margin-top: map-get($spacing, $value)
+  margin-top: map.get($spacing, $value);
 }
 
 @mixin margin-right($value) {
-    margin-top: map-get($spacing, $value)
+  margin-top: map.get($spacing, $value);
 }
-
 
 /* padding */
 
-@mixin padding($valueTop, $valueRight:null, $valueBottom:null, $valueLeft:null) {
+@mixin padding(
+  $value-top,
+  $value-right: null,
+  $value-bottom: null,
+  $value-left: null
+) {
+  // padding('xxl') 4 directions
+  @if $value-right==null and $value-bottom==null and $value-left==null {
+    $value-right: $value-top;
+    $value-bottom: $value-top;
+    $value-left: $value-top;
+  }
 
-    // padding('xxl') 4 directions
-    @if $valueRight==null and $valueBottom==null and $valueLeft==null {
-        $valueRight: $valueTop;
-        $valueBottom: $valueTop;
-        $valueLeft: $valueTop;
-    }
-
-    padding-left: map-get($spacing, $valueLeft);
-    padding-right: map-get($spacing, $valueRight);
-    padding-top: map-get($spacing, $valueTop);
-    padding-bottom: map-get($spacing, $valueBottom);
+  padding-left: map.get($spacing, $value-left);
+  padding-right: map.get($spacing, $value-right);
+  padding-top: map.get($spacing, $value-top);
+  padding-bottom: map.get($spacing, $value-bottom);
 }
 
-@mixin padding-x($valueLeft, $valueRight:null) {
-    @if $valueRight==null {
-        $valueRight: $valueLeft;
-    }
+@mixin padding-x($value-left, $value-right: null) {
+  @if $value-right==null {
+    $value-right: $value-left;
+  }
 
-    padding-left: map-get($spacing, $valueLeft);
-    padding-right: map-get($spacing, $valueRight);
+  padding-left: map.get($spacing, $value-left);
+  padding-right: map.get($spacing, $value-right);
 }
 
-@mixin padding-y($valueTop, $valueBottom:null) {
-    @if $valueBottom==null {
-        $valueBottom: $valueTop;
-    }
+@mixin padding-y($value-top, $value-bottom: null) {
+  @if $value-bottom==null {
+    $value-bottom: $value-top;
+  }
 
-    padding-top: map-get($spacing, $valueTop);
-    padding-bottom: map-get($spacing, $valueBottom);
+  padding-top: map.get($spacing, $value-top);
+  padding-bottom: map.get($spacing, $value-bottom);
 }
-
 
 @mixin padding-top($value) {
-    padding-top: map-get($spacing, $value)
+  padding-top: map.get($spacing, $value);
 }
 
 @mixin padding-bottom($value) {
-    padding-top: map-get($spacing, $value)
+  padding-top: map.get($spacing, $value);
 }
 
 @mixin padding-left($value) {
-    padding-top: map-get($spacing, $value)
+  padding-top: map.get($spacing, $value);
 }
 
 @mixin padding-right($value) {
-    padding-top: map-get($spacing, $value)
+  padding-top: map.get($spacing, $value);
 }
 
-
 /*=====  End of Section comment block  ======*/
-
-
-
-
-
-
 
 /*=============================================
  =            MIXIN RESPONSIVE                 =
  =============================================*/
 
-
-
-
-
 @mixin tablet {
-    @media (min-width:map-get($breakpoints, 'md')) {
-        @content;
-    }
+  @media (min-width: map.get($breakpoints, "md")) {
+    @content;
+  }
 }
 
 @mixin Laptop {
-    @media (min-width:map-get($breakpoints, 'lg')) {
-        @content;
-    }
+  @media (min-width: map.get($breakpoints, "lg")) {
+    @content;
+  }
 }
 
 @mixin largeLaptop {
-    @media (min-width:map-get($breakpoints, 'xl')) {
-        @content;
-    }
+  @media (min-width: map.get($breakpoints, "xl")) {
+    @content;
+  }
 }
 
 @mixin desktop {
-    @media (min-width:map-get($breakpoints, 'xxl')) {
-        @content;
-    }
+  @media (min-width: map.get($breakpoints, "xxl")) {
+    @content;
+  }
 }
-
 
 /*=====  End of Section comment block  ======*/
