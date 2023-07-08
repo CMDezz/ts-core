@@ -19,6 +19,16 @@ module.exports = {
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
+    alias: {
+      "@api": path.resolve(__dirname, "src", "control", "api"),
+      "@components": path.resolve(__dirname, "src", "components"),
+      "@common": path.resolve(__dirname, "src", "control", "common"),
+      "@hook": path.resolve(__dirname, "src", "control", "hook"),
+      "@static": path.resolve(__dirname, "src", "static"),
+      "@src": path.resolve(__dirname, "src"),
+      "@state": path.resolve(__dirname, "src", "state"),
+      "@style": path.resolve(__dirname, "src", "style"),
+    },
   },
   output: {
     filename: "bundle.js",
