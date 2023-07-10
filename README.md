@@ -44,3 +44,7 @@
 # Need to research more on configs :
 
 - [Prettier] `Eslint` [Stylelint] `Webpack` [Husky] `lint-staged`
+
+# TESTING LIBRARY : JEST + REACT TESTING LIBRARY
+
+- `UNIT TEST` ON [EACH] `ATOMS`, EACH `MOLECULES`, EACH `ORGANISMS`
