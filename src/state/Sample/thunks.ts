@@ -1,4 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { ThunkActionMap } from "../commons";
 
 const SampleApi = (data: string): Promise<string> => {
   return new Promise((res, rej) => {
@@ -25,15 +26,16 @@ export const updateSampleNameAsync = createAsyncThunk<
   string, //output thunk return
   string, //input thunk data
   { rejectValue: errorState } //type of reject value
->("SampleSlice", (data: string, { rejectWithValue }) => {
+>("SampleSlice", (data: string) => {
   return SampleApi(data)
     .then(res => res)
     .catch(err => {
       console.log("err ", err);
       return err;
-      //   if (!err.message) {
-      //     throw err;
-      //   }
-      //   return rejectWithValue(err);
     });
 });
+
+const ThunkActions: ThunkActionMap = {
+  updateSampleNameAsync,
+};
+export default ThunkActions;
